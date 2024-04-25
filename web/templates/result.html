@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1 class="title">Top Movies Related to Subtitle Snippet:</h1>
+    <div class="container">
+        <ul class="movie-list">
+            {% for movie_name, subtitle_id in movie_info %}
+                <li>
+                    <span class="movie-title">{{ movie_name }}</span><br>
+                    <a href="https://www.opensubtitles.org/en/subtitles/{{ subtitle_id }}" class="subtitle-link">View Subtitles</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
